@@ -55,10 +55,10 @@ export async function resolveService (ssdp: SSDP, usn: string, st: string, locat
     } else {
       ssdp.emit('service:update', service)
     }
-  } catch (err: any) {
+  } catch (err) {
     // remove it so we can try again later
     cache.deleteService(st, usn)
 
-    ssdp.emit('error', err)
+    ssdp.emit('error', err as any)
   }
 }

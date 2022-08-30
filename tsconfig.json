@@ -1,10 +1,37 @@
 {
-  "extends": "aegir/src/config/tsconfig.aegir.json",
-  "compilerOptions": {
-    "outDir": "dist",
-    "emitDeclarationOnly": false,
-    "module": "ES2020"
-  },
+    "compilerOptions": {
+        "strict": true,
+        // project options
+        "outDir": "dist",
+        "allowJs": true,
+        "checkJs": true,
+        "target": "esnext",
+        "module": "esnext",
+        "noEmit": false,
+        "noEmitOnError": true,
+        "emitDeclarationOnly": false,
+        "declaration": true,
+        "declarationMap": true,
+        "incremental": true,
+        "composite": true,
+        "isolatedModules": true,
+        "removeComments": false,
+        "sourceMap": true,
+        // module resolution
+        "esModuleInterop": true,
+        "moduleResolution": "node",
+        // linter checks
+        "noImplicitReturns": false,
+        "noFallthroughCasesInSwitch": true,
+        "noUnusedLocals": true,
+        "noUnusedParameters": false,
+        // advanced
+        "importsNotUsedAsValues": "error",
+        "forceConsistentCasingInFileNames": true,
+        "skipLibCheck": true,
+        "stripInternal": true,
+        "resolveJsonModule": true
+    },
   "include": [
     "src",
     "test"

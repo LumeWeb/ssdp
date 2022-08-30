@@ -25,8 +25,8 @@ export async function createSockets (ssdp: SSDP, signal: AbortSignal): Promise<S
             socket.setMulticastTTL(options.maxHops)
 
             resolve(socket as SSDPSocket)
-          } catch (error: any) {
-            error.message = `Adding membership ${options.broadcast.address} failed - ${error.message}` // eslint-disable-line @typescript-eslint/restrict-template-expressions
+          } catch (error) {
+            (error as Error).message = `Adding membership ${options.broadcast.address} failed - ${(error as Error).message}` // eslint-disable-line @typescript-eslint/restrict-template-expressions
             reject(error)
           }
         })
